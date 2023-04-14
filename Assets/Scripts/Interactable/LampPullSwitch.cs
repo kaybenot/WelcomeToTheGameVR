@@ -20,8 +20,6 @@ public class LampPullSwitch : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(spring.currentForce);
-
         if(Mathf.Abs(spring.currentForce.y) > forceToPull)
         {
             if (currentTimeBetweenPulls > timeBetweenPulls)
