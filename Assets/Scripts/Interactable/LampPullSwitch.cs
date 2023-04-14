@@ -12,7 +12,8 @@ public class LampPullSwitch : MonoBehaviour
 
     AudioSource audioSource;
     float currentTimeBetweenPulls = 0f;
-    bool isOn = false;
+
+    public bool isOn = false;
 
     private void Start()
     {
