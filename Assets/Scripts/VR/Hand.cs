@@ -23,7 +23,7 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
-        var grip = controller.activateAction.action.ReadValue<float>();
+        var grip = controller.selectAction.action.ReadValue<float>();
         if (grip != 0f)
         {
             OnGrip?.Invoke(grip);
