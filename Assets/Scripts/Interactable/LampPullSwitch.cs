@@ -8,14 +8,16 @@ public class LampPullSwitch : MonoBehaviour
     [SerializeField] GameObject lightGO;
     [SerializeField] float forceToPull = 1f;
     [SerializeField] float timeBetweenPulls = 0.5f;
+    [SerializeField] private GameObject lampOn;
+    [SerializeField] private GameObject lampOff;
 
     float currentTimeBetweenPulls = 0f;
 
-    public bool isOn = false;
+    public bool isOn = true;
 
     private void Start()
     {
-        lightGO.SetActive(false);
+        ChangeMode();
     }
 
     void Update()
@@ -34,8 +36,18 @@ public class LampPullSwitch : MonoBehaviour
 
     public void ChangeMode()
     {
-        if(isOn) lightGO.SetActive(false);
-        else lightGO.SetActive(true);
+        if (isOn)
+        {
+            lightGO.SetActive(false);
+            lampOff.SetActive(true);
+            lampOn.SetActive(false);
+        }
+        else
+        {
+            lightGO.SetActive(true);
+            lampOff.SetActive(false);
+            lampOn.SetActive(true);
+        }
 
         isOn = !isOn;
     }
