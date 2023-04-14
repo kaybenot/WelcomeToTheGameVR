@@ -139,6 +139,7 @@ MonoBehaviour:
   timeBetweenPulls: 1
   lampOn: {fileID: 2301848569847045334}
   lampOff: {fileID: 4750598084124305802}
+  lampSounds: []
   isOn: 1
 --- !u!1 &3282807286941521141
 GameObject:
@@ -874,3 +875,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivot: {fileID: 7058364172788473841}
   breakeDistance: 0.2
+  pullSwitch: {fileID: 363565059870939507}

@@ -13,7 +13,6 @@ public class LampPullSwitch : MonoBehaviour
     [SerializeField] AudioClip[] lampSounds;
 
     AudioSource audioSource;
-    float currentTimeBetweenPulls = 0f;
 
     public bool isOn = true;
 
@@ -21,20 +20,6 @@ public class LampPullSwitch : MonoBehaviour
     {
         ChangeMode();
         audioSource = GetComponent<AudioSource>();
-    }
-
-    void Update()
-    {
-        if(Mathf.Abs(spring.currentForce.y) > forceToPull)
-        {
-            if (currentTimeBetweenPulls > timeBetweenPulls)
-            {
-                ChangeMode();
-                currentTimeBetweenPulls = 0f;
-            }
-        }
-
-        currentTimeBetweenPulls += Time.deltaTime;
     }
 
     public void ChangeMode()
