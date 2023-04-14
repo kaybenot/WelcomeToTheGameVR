@@ -10,7 +10,9 @@ public class LampPullSwitch : MonoBehaviour
     [SerializeField] float timeBetweenPulls = 0.5f;
     [SerializeField] private GameObject lampOn;
     [SerializeField] private GameObject lampOff;
+    [SerializeField] AudioClip[] lampSounds;
 
+    AudioSource audioSource;
     float currentTimeBetweenPulls = 0f;
 
     public bool isOn = true;
@@ -18,6 +20,7 @@ public class LampPullSwitch : MonoBehaviour
     private void Start()
     {
         ChangeMode();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -50,6 +53,9 @@ public class LampPullSwitch : MonoBehaviour
         }
 
         isOn = !isOn;
+
+        audioSource.clip = lampSounds[Random.Range(0,lampSounds.Length)];
+        audioSource.Play();
     }
 
     public void SetOn()
