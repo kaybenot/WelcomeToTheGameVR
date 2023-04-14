@@ -39,4 +39,16 @@ public class LampPullSwitch : MonoBehaviour
 
         isOn = !isOn;
     }
+
+    public void SetOn()
+    {
+        lightGO.SetActive(true);
+        isOn = true;
+    }
+
+    public void SetOff()
+    {
+        lightGO.SetActive(false);
+        isOn = false;
+    }
 }
