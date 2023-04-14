@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private PapersPleaseMinigame papersMinigame;
+    
     private static GameManager _instance;
 
     public static GameManager Instance
