@@ -7,6 +7,7 @@ using UnityEngine;
 public class JumpscareManager : MonoBehaviour
 {
     [SerializeField] List<JumpscareConfiguration> jumpscares;
+    [SerializeField] PapersPleaseMinigame papersPleaseMinigame;
     bool isReadyForNextJumpscare = true;
 
     IEnumerator Start()
@@ -30,7 +31,9 @@ public class JumpscareManager : MonoBehaviour
 
     private bool ShouldLaunchJumpscareThisSecond()
     {
-        return true; //todo: less jumpscares when score is low
+        var todo = papersPleaseMinigame.TasksToDo;
+        var probability = Mathf.InverseLerp(60, 0, todo);
+        return UnityEngine.Random.Range(0f, 1f) < probability;
     }
 
     private JumpscareProvider SelectJumpscare()

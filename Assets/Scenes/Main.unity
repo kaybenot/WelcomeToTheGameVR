@@ -2029,7 +2029,8 @@ MonoBehaviour:
   - jumpscareProvider: {fileID: 1164118469}
     probability01: 1
   - jumpscareProvider: {fileID: 8993686889934368598}
-    probability01: 1
+    probability01: 0.2
+  papersPleaseMinigame: {fileID: 115825680}
 --- !u!1001 &8115146171280326537
 PrefabInstance:
   m_ObjectHideFlags: 0
