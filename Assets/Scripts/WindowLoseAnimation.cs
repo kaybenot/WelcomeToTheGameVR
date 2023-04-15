@@ -45,7 +45,7 @@ public class WindowLoseAnimation : MonoBehaviour
     {
         if (animPlaying)
         {
-            Debug.Log(killerRotationProgress);
+            //Debug.Log(killerRotationProgress);
             killerRotationProgress += Time.deltaTime * rotateSpeed;
             playerCamera.rotation = Quaternion.Slerp(startRotation, targetRotation, killerRotationProgress);
             

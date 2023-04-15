@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Walker : MonoBehaviour
+public class Walker : JumpscareProvider
 {
     public enum State
     {
+        Waiting,
         WalkingIn,
         LookingAtWindow,
         WalkingOut
@@ -26,13 +27,11 @@ public class Walker : MonoBehaviour
     public bool walkingEnabled;
     public float lookingTime = 2;
 
-    private void Start()
-    {
-        Reset();
-    }
 
     private void Update()
     {
+        if (currentState == State.Waiting)
+            return;
         if (currentState == State.WalkingIn)
         {
             var lookPos = Window.position - transform.position;
@@ -58,6 +57,7 @@ public class Walker : MonoBehaviour
             if (lookingProgress >= lookingTime)
             {
                 currentState = State.WalkingOut;
+                OnScareCompleteEvent(10);
             }
         }
         else if (currentState == State.WalkingOut)
@@ -79,11 +79,21 @@ public class Walker : MonoBehaviour
 
     private void Reset()
     {
-        currentState = State.WalkingIn;
+        currentState = State.Waiting;
         walkingInProgress = 0;
         walkingOutProgress = 0;
         lookingProgress = 0;
         transform.position = StartPoint.position;
         transform.LookAt(EndPoint);
+    }
+
+    public override void Scare()
+    {
+        currentState = State.WalkingIn;
+    }
+
+    public override bool IsReady()
+    {
+        return currentState == State.Waiting;
     }
 }
