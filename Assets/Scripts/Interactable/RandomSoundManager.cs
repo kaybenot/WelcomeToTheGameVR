@@ -6,7 +6,7 @@ public class RandomSoundManager : MonoBehaviour
 {
     [SerializeField] GameObject randomSoundPrefab;
     [SerializeField] float timeToStart = 5f;
-    [SerializeField] float timeBetween = 10f;
+    [SerializeField] float timeBetween = 20f;
 
     private void Start()
     {
