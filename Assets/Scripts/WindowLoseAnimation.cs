@@ -20,17 +20,23 @@ public class WindowLoseAnimation : MonoBehaviour
     float killerMoveProgress = 0;
     float killerRotationProgress = 0;
 
-    public void PlayLoseAnimation()
+    public void PlayLoseAnimation(Transform look = null, GameObject killerPrefab = null)
     {
         if (animPlaying)
             return;
 
-        killer = Instantiate(KillerPrefab, lookAtPoint.position, Quaternion.identity);
+        if (look == null)
+            look = lookAtPoint;
+
+        if (killer == null)
+            killerPrefab = KillerPrefab;
+
+        killer = Instantiate(killerPrefab, look.position, Quaternion.identity);
         killer.transform.LookAt(playerCamera);
 
         trackedPoseDriver.trackingType = TrackedPoseDriver.TrackingType.PositionOnly;
         startRotation = playerCamera.rotation;
-        targetRotation = Quaternion.LookRotation(lookAtPoint.transform.position - playerCamera.position);
+        targetRotation = Quaternion.LookRotation(look.transform.position - playerCamera.position);
 
         animPlaying = true;
     }
