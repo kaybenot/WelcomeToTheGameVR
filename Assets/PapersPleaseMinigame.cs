@@ -98,4 +98,16 @@ public class PapersPleaseMinigame : MonoBehaviour {
         yield return new WaitForSeconds(punishmentTime);
         punished = false;
     }
+
+    public void HideCanvas()
+    {
+        foreach (var canvas in GetComponentsInChildren<Canvas>())
+            canvas.enabled = false;
+    }
+
+    public void ShowCanvas()
+    {
+        foreach (var canvas in GetComponentsInChildren<Canvas>())
+            canvas.enabled = true;
+    }
 }

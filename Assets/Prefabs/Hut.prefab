@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 543450652456627797}
   - component: {fileID: 3469287838454817264}
   - component: {fileID: 1711813854662382906}
+  - component: {fileID: 4697587867026103805}
   m_Layer: 0
   m_Name: Table_v3
   m_TagString: Untagged
@@ -250,6 +251,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4697587867026103805
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148249785583}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6692290496178104961, guid: 9b42e77b59f6ec2488812ce10b01723d, type: 3}
 --- !u!1 &919132148673232560
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +276,7 @@ GameObject:
   - component: {fileID: 543450653150635018}
   - component: {fileID: 3469287836999510959}
   - component: {fileID: 1711813856157802341}
+  - component: {fileID: 6677151374421896077}
   m_Layer: 0
   m_Name: Okno_v2
   m_TagString: Untagged
@@ -333,6 +349,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6677151374421896077
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148673232560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2228417370725966487, guid: 95e520bbd5cd5c64881728e6e206467d, type: 3}
 --- !u!1 &919132149368481054
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +949,18 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LampPullSwitch, Assembly-CSharp
         m_MethodName: SetOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Error, Assembly-CSharp
+        m_MethodName: DeactivadeBlueScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4478,7 +4520,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2760
+  m_VersionIndex: 2185
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4868,7 +4910,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4141
+  m_VersionIndex: 3574
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5212,7 +5254,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4141
+  m_VersionIndex: 3568
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8198,7 +8240,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3047
+  m_VersionIndex: 2474
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8543,7 +8585,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2017
+  m_VersionIndex: 1444
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9398,6 +9440,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57dd8a9d1c0ff814394ff666b58a0def, type: 3}
+--- !u!1 &1785294961456739826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7919858463110914221, guid: 57dd8a9d1c0ff814394ff666b58a0def,
+    type: 3}
+  m_PrefabInstance: {fileID: 8443784213839517023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &7730993987921194387
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785294961456739826}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7179608036806375561, guid: 89cb0cf34981bc34aaf9b39fcd1491f8, type: 3}
 --- !u!4 &5930027451463396468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2838931932081748267, guid: 57dd8a9d1c0ff814394ff666b58a0def,
@@ -9479,3 +9541,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8993686889119205645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3268401581987589760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5878410821489928077, guid: d90d94f52a27cc949b6608e123696e91,
+    type: 3}
+  m_PrefabInstance: {fileID: 8993686889119205645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1433294259297001991
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3268401581987589760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: a6ebc0746f695b84e87504e7cce52350, type: 3}
