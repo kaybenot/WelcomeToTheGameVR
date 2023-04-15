@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2886735293148318456}
   - component: {fileID: 1477933805375696668}
   m_Layer: 5
-  m_Name: Original
+  m_Name: Desktop background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,8 +154,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279772491
-  m_fontColor: {r: 0.2924528, g: 0.146475, b: 0.094909206, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
