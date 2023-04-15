@@ -52,7 +52,7 @@ public class WindowLoseAnimation : MonoBehaviour
 
             killer.transform.position = Vector3.Lerp(lookAtPoint.position, playerCamera.position, killerMoveProgress);
             killerMoveProgress += Time.deltaTime * killerSpeed;
-            killerMoveProgress = Mathf.Clamp(killerMoveProgress, 0, 0.9f);
+            killerMoveProgress = Mathf.Clamp(killerMoveProgress, 0, 0.7f);
         }
     }
 }
