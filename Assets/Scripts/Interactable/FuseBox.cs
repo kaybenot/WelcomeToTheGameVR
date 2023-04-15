@@ -6,9 +6,12 @@ using UnityEngine.Events;
 public class FuseBox : MonoBehaviour
 {
     [SerializeField] UnityEvent OnFuseButtonPressed;
-
+    [SerializeField] SetFusesPosition fusesPosition;
     public void FuseButtonPressed()
     {
-        OnFuseButtonPressed?.Invoke();
+        if (fusesPosition.isOn)
+        {
+            OnFuseButtonPressed?.Invoke();
+        }
     }
 }
