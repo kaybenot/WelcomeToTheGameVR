@@ -314,7 +314,6 @@ GameObject:
   - component: {fileID: 6898524238759801824}
   - component: {fileID: 4538497833828949973}
   - component: {fileID: 7708317840382797831}
-  - component: {fileID: 2733532646194198678}
   m_Layer: 0
   m_Name: Drzwi
   m_TagString: Untagged
@@ -388,24 +387,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2733532646194198678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7919858463110914221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce2cf2f1372a89046b49fe9aa60b829a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footstepClip: {fileID: 0}
-  handle: {fileID: 0}
-  timeToKill: 3
-  checkCount: 3
-  checkDuration: 1
-  attackTime: {x: 50, y: 70}
 --- !u!1001 &6577103338116596738
 PrefabInstance:
   m_ObjectHideFlags: 0

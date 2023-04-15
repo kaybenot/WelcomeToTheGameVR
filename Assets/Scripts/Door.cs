@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Door : MonoBehaviour
+public class Door : JumpscareProvider
 {
     [SerializeField] private AudioClip footstepClip;
     [SerializeField] private Transform handle;
@@ -20,29 +20,18 @@ public class Door : MonoBehaviour
     private Animator animator;
     private static readonly int OpenDoor = Animator.StringToHash("OpenDoor");
 
+    bool isReady = true;
+
     private void Awake()
     {
         source = GetComponent<AudioSource>();
         loseAnim = FindObjectOfType<WindowLoseAnimation>();
         animator = GetComponent<Animator>();
-        StartCoroutine(AttackLoop());
-    }
-
-    public void AttackDoor()
-    {
-        StartCoroutine(AttackDoorCrt());
-    }
-
-    // Temporary function
-    IEnumerator AttackLoop()
-    {
-        yield return new WaitForSeconds(Random.Range(attackTime.x, attackTime.y));
-        yield return StartCoroutine(AttackDoorCrt());
-        StartCoroutine(AttackLoop());
     }
 
     IEnumerator AttackDoorCrt()
     {
+        isReady = false;
         source.Play();
         yield return new WaitForSeconds(timeToKill);
         for (var i = 0; i < checkCount; i++)
@@ -54,14 +43,27 @@ public class Door : MonoBehaviour
                 loseAnim.PlayLoseAnimation(handle);
             }
         }
+
+        OnScareCompleteEvent(10);
         
         if (footstepClip)
             AudioSource.PlayClipAtPoint(footstepClip, transform.position);
+        isReady = true;
     }
 
     private bool IsPlayerHolding()
     {
         const float epsilon = 0.01f;
         return handle.rotation.x < -epsilon;
+    }
+
+    public override void Scare()
+    {
+        StartCoroutine(AttackDoorCrt());
+    }
+
+    public override bool IsReady()
+    {
+        return isReady;
     }
 }
