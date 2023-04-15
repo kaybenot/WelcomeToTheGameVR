@@ -70,6 +70,12 @@ public class PapersPleaseMinigame : MonoBehaviour {
     }
 
     void OnSuccess() {
+        if (TasksToDo <= 0)
+        {
+            GameManager.Instance.LoadWinScreen(1);
+            return;
+        }
+
         FillWithNewData();
         
         TasksToDo--;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,4 +28,22 @@ public class GameManager : MonoBehaviour
     }
 
     public GameData gameData;
+
+    public IEnumerator LoadMainScene(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(1);
+    }
+
+    public IEnumerator LoadLoseScreen(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(3);
+    }
+
+    public IEnumerator LoadWinScreen(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(2);
+    }
 }
