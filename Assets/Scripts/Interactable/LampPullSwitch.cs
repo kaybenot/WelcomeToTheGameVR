@@ -18,7 +18,7 @@ public class LampPullSwitch : MonoBehaviour
 
     private void Start()
     {
-        ChangeMode();
+        //ChangeMode();
         audioSource = GetComponent<AudioSource>();
     }
 

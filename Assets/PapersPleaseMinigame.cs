@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -13,9 +14,11 @@ public class PapersPleaseMinigame : MonoBehaviour {
     [SerializeField] TMP_Text websiteText;
     [SerializeField] TMP_Text counterText;
     [SerializeField] PunishmentPanel punishmentPanel;
+    [SerializeField] private float cooldownTime = 0.5f;
     
     private IdDataGenerator idDataGenerator = new IdDataGenerator();
     private bool areSame;
+    private bool onCooldown;
 
     void Awake() {
         FillWithNewData();
@@ -36,18 +39,32 @@ public class PapersPleaseMinigame : MonoBehaviour {
         areSame = ids.areSame;
     }
 
-    public void OnAcceptClick() {
+    public void OnAcceptClick()
+    {
+        if (onCooldown)
+            return;
+        
         if (areSame)
             OnSuccess();
         else
             OnFailure();
+
+        onCooldown = true;
+        StartCoroutine(ButtonCooldown());
     }
     
-    public void OnRejectClick() {
+    public void OnRejectClick()
+    {
+        if (onCooldown)
+            return;
+        
         if (!areSame)
             OnSuccess();
         else
             OnFailure();
+        
+        onCooldown = true;
+        StartCoroutine(ButtonCooldown());
     }
 
     void OnSuccess() {
@@ -63,5 +80,11 @@ public class PapersPleaseMinigame : MonoBehaviour {
         // TODO: Variable task increase
         TasksToDo++;
         OnTasksUpdated?.Invoke(TasksToDo);
+    }
+
+    IEnumerator ButtonCooldown()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        onCooldown = false;
     }
 }
