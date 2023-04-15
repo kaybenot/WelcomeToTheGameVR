@@ -15,10 +15,12 @@ public class PapersPleaseMinigame : MonoBehaviour {
     [SerializeField] TMP_Text counterText;
     [SerializeField] PunishmentPanel punishmentPanel;
     [SerializeField] private float cooldownTime = 0.5f;
+    [SerializeField] private float punishmentTime = 3f;
     
     private IdDataGenerator idDataGenerator = new IdDataGenerator();
     private bool areSame;
     private bool onCooldown;
+    private bool punished;
 
     void Awake() {
         FillWithNewData();
@@ -41,7 +43,7 @@ public class PapersPleaseMinigame : MonoBehaviour {
 
     public void OnAcceptClick()
     {
-        if (onCooldown)
+        if (onCooldown || punished)
             return;
         
         if (areSame)
@@ -55,7 +57,7 @@ public class PapersPleaseMinigame : MonoBehaviour {
     
     public void OnRejectClick()
     {
-        if (onCooldown)
+        if (onCooldown || punished)
             return;
         
         if (!areSame)
@@ -75,7 +77,10 @@ public class PapersPleaseMinigame : MonoBehaviour {
     }
     
     void OnFailure() {
-        punishmentPanel.Punish(FillWithNewData);
+        punishmentPanel.Punish(FillWithNewData, punishmentTime);
+        
+        punished = true;
+        StartCoroutine(PunishCooldown());
         
         // TODO: Variable task increase
         TasksToDo++;
@@ -86,5 +91,11 @@ public class PapersPleaseMinigame : MonoBehaviour {
     {
         yield return new WaitForSeconds(cooldownTime);
         onCooldown = false;
+    }
+    
+    IEnumerator PunishCooldown()
+    {
+        yield return new WaitForSeconds(punishmentTime);
+        punished = false;
     }
 }
