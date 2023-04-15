@@ -3,7 +3,17 @@ guid: 89cb0cf34981bc34aaf9b39fcd1491f8
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Transpaerent
+    second: {fileID: 2100000, guid: 37009f1f33c5886458e77b8204f049ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: drewno
+    second: {fileID: 2100000, guid: 05040e73f2c53334d916c1fd53e9c493, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -46,17 +46,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioclips:
-  - {fileID: 8300000, guid: 16159f3731456464781be1b64061d41e, type: 3}
-  - {fileID: 8300000, guid: 16a50664f31a51342870ccfce6dba689, type: 3}
-  - {fileID: 8300000, guid: 71ac3f038a85a1640a8c061e0a11e15f, type: 3}
   - {fileID: 8300000, guid: f70d8eb29b2978048b268ca7a8765448, type: 3}
   - {fileID: 8300000, guid: 548498789505d0e418fddb4283a250a4, type: 3}
+  - {fileID: 8300000, guid: 3147a996cb8cdcc4d9cd2e345bd0c123, type: 3}
+  - {fileID: 8300000, guid: d476e3726ae4b57409721b775e2b225b, type: 3}
+  - {fileID: 8300000, guid: e28bea6120ed16b4f89a38cf8c583b14, type: 3}
   soundTransform:
-  - {x: 1.044, y: -0.23169169, z: 0.854}
-  - {x: -0.998, y: 1, z: 0.87}
-  - {x: -0.24651814, y: 1.2194558, z: 3.373054}
   - {x: -0.998, y: 1, z: 0.87}
   - {x: 1.044, y: -0.23169169, z: 0.854}
+  - {x: 0, y: 0, z: 1}
+  - {x: -1, y: 0, z: -1}
+  - {x: 0, y: 0, z: -1}
 --- !u!82 &4285516456759954199
 AudioSource:
   m_ObjectHideFlags: 0
