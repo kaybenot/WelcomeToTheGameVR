@@ -5771,6 +5771,11 @@ PrefabInstance:
       objectReference: {fileID: 27208659}
     - target: {fileID: 6688837577682305425, guid: be95248c929baec43aee00488a369884,
         type: 3}
+      propertyPath: WindowPoint
+      value: 
+      objectReference: {fileID: 1241197638}
+    - target: {fileID: 6688837577682305425, guid: be95248c929baec43aee00488a369884,
+        type: 3}
       propertyPath: walkingSpeed
       value: 0.001
       objectReference: {fileID: 0}
@@ -5823,7 +5828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241197637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.247, y: -0.36999512, z: -5.0690002}
+  m_LocalPosition: {x: -1.247, y: -0.36999512, z: 0.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7128,7 +7133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519699277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.78, y: -0.36999512, z: -12.48}
+  m_LocalPosition: {x: -4.46, y: -0.36999512, z: -12.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7598,7 +7603,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 3}
 --- !u!1 &1783968685
 GameObject:
   m_ObjectHideFlags: 0
