@@ -11,6 +11,7 @@ public class LampPullSwitch : MonoBehaviour
     [SerializeField] private GameObject lampOn;
     [SerializeField] private GameObject lampOff;
     [SerializeField] AudioClip[] lampSounds;
+    [SerializeField] GameObject killerPrefab;
 
     AudioSource audioSource;
 
@@ -35,6 +36,13 @@ public class LampPullSwitch : MonoBehaviour
             lightGO.SetActive(true);
             lampOff.SetActive(false);
             lampOn.SetActive(true);
+
+            int random = Random.Range(0, 5);
+            if (random == 0)
+            {
+                GameObject go = Instantiate(killerPrefab, transform.position + new Vector3(0f, 0.1f, 0.1f), transform.rotation * Quaternion.Euler(0, 90f, 0));
+                Destroy(go.gameObject, 1f);
+            }
         }
 
         isOn = !isOn;

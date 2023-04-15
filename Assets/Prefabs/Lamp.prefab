@@ -143,6 +143,8 @@ MonoBehaviour:
   lampSounds:
   - {fileID: 8300000, guid: 79343ec9d9460a5409b0db4d7c70d815, type: 3}
   - {fileID: 8300000, guid: 464773fa5e89b3740a7d9614792adc6e, type: 3}
+  killerPrefab: {fileID: 7912443523102854905, guid: 45e8b8308c7c12e45894b2adc3e74a17,
+    type: 3}
   isOn: 1
 --- !u!82 &543450652290210698
 AudioSource:
