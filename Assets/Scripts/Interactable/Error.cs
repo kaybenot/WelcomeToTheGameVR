@@ -6,11 +6,10 @@ public class Error : MonoBehaviour
 {
     [SerializeField] GameObject blueScreen;
     [SerializeField] int minTime = 40, maxTime = 60;
-     GameObject minigame;
+    [SerializeField] PapersPleaseMinigame minigame;
 
     private void Start()
     {
-        minigame = FindObjectOfType<PapersPleaseMinigame>().transform.gameObject;
         DeactivadeBlueScreen();
         StartCoroutine(StartCounter());
     }
@@ -18,13 +17,13 @@ public class Error : MonoBehaviour
     public void ActivadeBlueScreen()
     {
         blueScreen.SetActive(true);
-        minigame.SetActive(false);
+        minigame.HideCanvas();
     }
 
     public void DeactivadeBlueScreen()
     {
         blueScreen.SetActive(false);
-        minigame.SetActive(true);
+        minigame.ShowCanvas();
     }
 
     IEnumerator StartCounter()
