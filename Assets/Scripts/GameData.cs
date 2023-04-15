@@ -4,5 +4,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Game Data", menuName = "ScriptableObjects/GameData")]
 public class GameData : ScriptableObject
 {
-    public int A = 1;
+    public int TasksToDo = 60;
 }

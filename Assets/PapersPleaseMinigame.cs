@@ -1,15 +1,35 @@
+using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using XRController = UnityEngine.InputSystem.XR.XRController;
 
 public class PapersPleaseMinigame : MonoBehaviour {
-    IdDataGenerator idDataGenerator = new IdDataGenerator();
+    
+    public int TasksToDo { get; private set; }
+    public Action<int> OnTasksUpdated { get; set; }
+    
     [SerializeField] TMP_Text paperText;
     [SerializeField] TMP_Text websiteText;
+    [SerializeField] TMP_Text counterText;
     [SerializeField] PunishmentPanel punishmentPanel;
-    bool areSame;
+    [SerializeField] private float cooldownTime = 0.5f;
+    
+    private IdDataGenerator idDataGenerator = new IdDataGenerator();
+    private bool areSame;
+    private bool onCooldown;
 
     void Awake() {
         FillWithNewData();
+
+        TasksToDo = GameManager.Instance.gameData.TasksToDo;
+        OnTasksUpdated += (count) => counterText.text = count.ToString();
+    }
+
+    private void Start()
+    {
+        OnTasksUpdated?.Invoke(TasksToDo);
     }
 
     public void FillWithNewData() {
@@ -19,25 +39,52 @@ public class PapersPleaseMinigame : MonoBehaviour {
         areSame = ids.areSame;
     }
 
-    public void OnAcceptClick() {
+    public void OnAcceptClick()
+    {
+        if (onCooldown)
+            return;
+        
         if (areSame)
             OnSuccess();
         else
             OnFailure();
+
+        onCooldown = true;
+        StartCoroutine(ButtonCooldown());
     }
     
-    public void OnRejectClick() {
+    public void OnRejectClick()
+    {
+        if (onCooldown)
+            return;
+        
         if (!areSame)
             OnSuccess();
         else
             OnFailure();
+        
+        onCooldown = true;
+        StartCoroutine(ButtonCooldown());
     }
 
     void OnSuccess() {
         FillWithNewData();
+        
+        TasksToDo--;
+        OnTasksUpdated?.Invoke(TasksToDo);
     }
     
     void OnFailure() {
         punishmentPanel.Punish(FillWithNewData);
+        
+        // TODO: Variable task increase
+        TasksToDo++;
+        OnTasksUpdated?.Invoke(TasksToDo);
+    }
+
+    IEnumerator ButtonCooldown()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        onCooldown = false;
     }
 }

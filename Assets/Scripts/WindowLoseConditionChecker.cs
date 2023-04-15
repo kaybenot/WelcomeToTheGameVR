@@ -13,7 +13,7 @@ public class WindowLoseConditionChecker : MonoBehaviour
 
     private void Update()
     {
-        if (lampPullSwitch.isOn && walker.progress >= 1)
+        if (lampPullSwitch.isOn && walker.currentState == Walker.State.LookingAtWindow)
         {
             loseAnimation.PlayLoseAnimation();
         }

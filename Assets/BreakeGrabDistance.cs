@@ -7,6 +7,7 @@ public class BreakeGrabDistance : MonoBehaviour
 {
     [SerializeField] Transform pivot;
     [SerializeField] float breakeDistance = 0.5f;
+    [SerializeField] private LampPullSwitch pullSwitch;
     XRGrabInteractable interactable;
     XRInteractionManager interactManager;
 
@@ -22,6 +23,7 @@ public class BreakeGrabDistance : MonoBehaviour
         {
             if (interactManager && interactable.firstInteractorSelecting != null) {
                 interactManager.CancelInteractorSelection(interactable.firstInteractorSelecting);
+                pullSwitch.ChangeMode();
             }
         }
     }
