@@ -15,6 +15,7 @@ public class RandomSound : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
 
+        audioSource.panStereo = Random.Range(-1f,1f);
         audioSource.clip = audioclips[random];
         Destroy(gameObject, audioSource.clip.length);
         transform.position = soundTransform[random];
