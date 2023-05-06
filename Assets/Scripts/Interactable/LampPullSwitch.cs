@@ -6,43 +6,47 @@ public class LampPullSwitch : MonoBehaviour
 {
     [SerializeField] Joint spring;
     [SerializeField] GameObject lightGO;
+    [SerializeField] Light lightComp;
     [SerializeField] float forceToPull = 1f;
     [SerializeField] float timeBetweenPulls = 0.5f;
     [SerializeField] private GameObject lampOn;
     [SerializeField] private GameObject lampOff;
     [SerializeField] AudioClip[] lampSounds;
-    [SerializeField] GameObject killerPrefab;
+    [SerializeField] float offIntensity;
+    [SerializeField] float offRange;
 
     AudioSource audioSource;
 
     public bool isOn = true;
 
+    float startIntensity;
+    float startRange;
+
     private void Start()
     {
         //ChangeMode();
         audioSource = GetComponent<AudioSource>();
+        startIntensity = lightComp.intensity;
+        startRange = lightComp.range;
     }
 
     public void ChangeMode()
     {
         if (isOn)
         {
-            lightGO.SetActive(false);
+            //lightGO.SetActive(false);
             lampOff.SetActive(true);
             lampOn.SetActive(false);
+            lightComp.intensity = offIntensity;
+            lightComp.range = offRange;
         }
         else
         {
-            lightGO.SetActive(true);
+            //lightGO.SetActive(true);
             lampOff.SetActive(false);
             lampOn.SetActive(true);
-
-            int random = Random.Range(0, 5);
-            if (random == 0)
-            {
-                GameObject go = Instantiate(killerPrefab, transform.position + new Vector3(0f, 0.1f, 0.1f), transform.rotation * Quaternion.Euler(0, 90f, 0));
-                Destroy(go.gameObject, 1f);
-            }
+            lightComp.intensity = startIntensity;
+            lightComp.range = startRange;
         }
 
         isOn = !isOn;

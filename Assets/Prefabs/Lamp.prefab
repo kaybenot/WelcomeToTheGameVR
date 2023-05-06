@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spring: {fileID: 742112666}
   lightGO: {fileID: 3282807286941521141}
+  lightComp: {fileID: 0}
   forceToPull: 1.5
   timeBetweenPulls: 1
   lampOn: {fileID: 2301848569847045334}
@@ -143,8 +144,8 @@ MonoBehaviour:
   lampSounds:
   - {fileID: 8300000, guid: 79343ec9d9460a5409b0db4d7c70d815, type: 3}
   - {fileID: 8300000, guid: 464773fa5e89b3740a7d9614792adc6e, type: 3}
-  killerPrefab: {fileID: 7912443523102854905, guid: 45e8b8308c7c12e45894b2adc3e74a17,
-    type: 3}
+  offIntensity: 0.003
+  offRange: 0.3
   isOn: 1
 --- !u!82 &543450652290210698
 AudioSource:
@@ -268,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3282807286941521141}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.296, z: 0}
+  m_LocalPosition: {x: 0.045, y: 0.308, z: 0.069}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -287,8 +288,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.8572043, b: 0.6509804, a: 1}
-  m_Intensity: 0.25
-  m_Range: 3.06
+  m_Intensity: 0.11
+  m_Range: 4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -296,7 +297,7 @@ Light:
     m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.253
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -351,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 1
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_LightLayerMask: 1
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1

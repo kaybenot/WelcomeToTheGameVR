@@ -50,6 +50,7 @@ MonoBehaviour:
   blueScreen: {fileID: 1910044001}
   minTime: 40
   maxTime: 60
+  minigame: {fileID: 0}
 --- !u!114 &174459369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910044001}
   m_LocalRotation: {x: 0, y: -0.0008726012, z: 0, w: 0.99999964}
-  m_LocalPosition: {x: -0.015, y: 0.223, z: 0}
+  m_LocalPosition: {x: -0.0174, y: 0.223, z: -0}
   m_LocalScale: {x: 0.01, y: 0.28, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -193,6 +194,7 @@ GameObject:
   - component: {fileID: 3445136364041693524}
   - component: {fileID: 3445136364041693523}
   - component: {fileID: 3445136364876009842}
+  - component: {fileID: 3445136364876009843}
   m_Layer: 0
   m_Name: '[Managers]'
   m_TagString: Untagged
@@ -283,6 +285,42 @@ MonoBehaviour:
   - jumpscareProvider: {fileID: 0}
     probability01: 0.2
   papersPleaseMinigame: {fileID: 0}
+--- !u!114 &3445136364876009843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445136364041693520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b0430bc5e52714080effb2da9b30f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loseAnimation: {fileID: 3445136364041693523}
+  lampPullSwitch: {fileID: 0}
+  sanityLoseSpeed: 0.03
+  sanityGainSpeed: 0.01
+  ghosts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sanityLeft: 1
 --- !u!1 &3445136364225798995
 GameObject:
   m_ObjectHideFlags: 0
